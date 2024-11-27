@@ -31,30 +31,32 @@ const BreedCard = ({ id }: BreedCardProps) => {
   const { name, description, temperament, origin, life_span: lifeSpan } = data;
 
   return (
-    <div className="overflow-hidden bg-petal shadow sm:rounded-lg">
-      <div className="px-10 py-12 sm:px-6">
-        {name && <h3 className="text-l font-semibold">{name}</h3>}
-        {description && <p className="mt-4 max-w-2xl text-sm">{description}</p>}
+    <div className="overflow-hidden bg-petal rounded-lg max-w-[60rem] w-full">
+      <div className="px-8 py-12 sm:px-10">
+        {name && (
+          <h3 className="text-xl/6 font-semibold text-pretty">{name}</h3>
+        )}
+        {description && <p className="mt-4 text-md/6">{description}</p>}
       </div>
 
       <div className="border-t border-lavender">
         <dl className="divide-y divide-lavender">
           {temperament && (
-            <div className="px-6 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-              <dt className="text-xs font-medium">Temperament</dt>
-              <dd className="text-xs/6 sm:col-span-2">{temperament}</dd>
+            <div className="px-8 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-10">
+              <dt className="text-sm/6 font-medium">Temperament</dt>
+              <dd className="text-sm/6 sm:col-span-2">{temperament}</dd>
             </div>
           )}
           {origin && (
-            <div className="px-6 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-              <dt className="text-xs/6 font-medium ">Origin</dt>
-              <dd className="text-xs/6 sm:col-span-2">{origin}</dd>
+            <div className="px-8 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-10">
+              <dt className="text-sm/6 font-medium ">Origin</dt>
+              <dd className="text-sm/6 sm:col-span-2">{origin}</dd>
             </div>
           )}
           {lifeSpan && (
-            <div className="px-6 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-              <dt className="text-xs/6 font-medium ">Life Span</dt>
-              <dd className="text-xs/6 sm:col-span-2">{lifeSpan} years</dd>
+            <div className="px-8 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-10">
+              <dt className="text-sm/6 font-medium ">Life Span</dt>
+              <dd className="text-sm/6 sm:col-span-2">{lifeSpan} years</dd>
             </div>
           )}
         </dl>

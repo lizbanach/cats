@@ -28,18 +28,18 @@ const Home = () => {
   }
 
   return (
-    <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+    <div className="mt-10 px-10 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
       {breeds.map((breed: TBreed) => (
         <Link key={breed.id} href={`/breed/${breed.id}`}>
           <div className="group relative">
-            <div className="h-56 w-full overflow-hidden rounded-md lg:h-72 xl:h-80 group-hover:opacity-75 transition ease-in-out">
+            <div className="h-56 w-full overflow-hidden rounded-md xl:h-72 group-hover:opacity-75 transition ease-in-out">
               <img
                 src={breed.image.url}
                 alt={breed.name}
-                className="size-full object-cover"
+                className="size-full object-cover object-center"
               />
             </div>
-            <div className="mt-4 text-xs font-medium">{breed.name}</div>
+            <div className="mt-4 text-md font-medium">{breed.name}</div>
           </div>
         </Link>
       ))}
