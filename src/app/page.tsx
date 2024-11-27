@@ -30,16 +30,16 @@ const Home = () => {
   return (
     <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
       {breeds.map((breed: TBreed) => (
-        <Link key={breed.id} className="text-sm" href={`/breed/${breed.id}`}>
+        <Link key={breed.id} href={`/breed/${breed.id}`}>
           <div className="group relative">
-            <div className="h-56 w-full overflow-hidden rounded-md lg:h-72 xl:h-80">
+            <div className="h-56 w-full overflow-hidden rounded-md lg:h-72 xl:h-80 group-hover:opacity-75 transition ease-in-out">
               <img
                 src={breed.image.url}
                 alt={breed.name}
                 className="size-full object-cover"
               />
             </div>
-            <div className="mt-4 text-sm">{breed.name}</div>
+            <div className="mt-4 text-xs font-medium">{breed.name}</div>
           </div>
         </Link>
       ))}

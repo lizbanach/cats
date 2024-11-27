@@ -31,34 +31,28 @@ const BreedCard = ({ id }: BreedCardProps) => {
   const { name, description, temperament, origin } = data;
 
   return (
-    <div className="overflow-hidden bg-white shadow sm:rounded-lg">
-      <div className="px-4 py-6 sm:px-6">
-        {name && (
-          <h3 className="text-base/7 font-semibold text-gray-900">{name}</h3>
-        )}
+    <div className="overflow-hidden bg-petal shadow sm:rounded-lg">
+      <div className="px-6 py-10 sm:px-6">
+        {name && <h3 className="text-xl font-semibold">{name}</h3>}
         {description && (
-          <p className="mt-1 max-w-2xl text-sm/6 text-gray-500">
-            {description}
-          </p>
+          <p className="mt-4 max-w-2xl text-sm/6">{description}</p>
         )}
       </div>
 
-      <div className="border-t border-gray-100">
-        <dl className="divide-y divide-gray-100">
+      <div className="border-t border-lavender">
+        <dl className="divide-y divide-lavender">
           {temperament && (
-            <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-              <dt className="text-sm font-medium text-gray-900">Temperament</dt>
-              <dd className="mt-1 text-sm/6 text-gray-700 sm:col-span-2 sm:mt-0">
+            <div className="px-6 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+              <dt className="text-sm font-medium">Temperament</dt>
+              <dd className="mt-1 text-sm/6 sm:col-span-2 sm:mt-0">
                 {temperament}
               </dd>
             </div>
           )}
           {origin && (
-            <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-              <dt className="text-sm font-medium text-gray-900">Origin</dt>
-              <dd className="mt-1 text-sm/6 text-gray-700 sm:col-span-2 sm:mt-0">
-                {origin}
-              </dd>
+            <div className="px-6 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+              <dt className="text-sm font-medium ">Origin</dt>
+              <dd className="mt-1 text-sm/6 sm:col-span-2 sm:mt-0">{origin}</dd>
             </div>
           )}
         </dl>
