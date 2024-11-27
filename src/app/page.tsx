@@ -5,7 +5,7 @@ import { TBreed } from '@/app/types';
 import Link from 'next/link';
 
 const Home = () => {
-  const [breeds, setBreeds] = useState([]);
+  const [breeds, setBreeds] = useState<TBreed[] | null>(null);
 
   useEffect(() => {
     const fetchBreeds = async () => {
@@ -13,17 +13,17 @@ const Home = () => {
       const response = await fetch(url, {
         headers: {
           'x-api-key': `${process.env.apiKey}`,
+          'Content-Type': 'application/json',
         },
       });
       const json = await response.json();
-      console.log(json);
       setBreeds(json);
     };
 
     fetchBreeds();
   }, []);
 
-  if (breeds.length === 0) {
+  if (!breeds) {
     return;
   }
 
