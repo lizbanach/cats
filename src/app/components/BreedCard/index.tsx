@@ -28,31 +28,33 @@ const BreedCard = ({ id }: BreedCardProps) => {
     return;
   }
 
-  const { name, description, temperament, origin } = data;
+  const { name, description, temperament, origin, life_span: lifeSpan } = data;
 
   return (
     <div className="overflow-hidden bg-petal shadow sm:rounded-lg">
-      <div className="px-6 py-10 sm:px-6">
-        {name && <h3 className="text-xl font-semibold">{name}</h3>}
-        {description && (
-          <p className="mt-4 max-w-2xl text-sm/6">{description}</p>
-        )}
+      <div className="px-10 py-12 sm:px-6">
+        {name && <h3 className="text-l font-semibold">{name}</h3>}
+        {description && <p className="mt-4 max-w-2xl text-sm">{description}</p>}
       </div>
 
       <div className="border-t border-lavender">
         <dl className="divide-y divide-lavender">
           {temperament && (
             <div className="px-6 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-              <dt className="text-sm font-medium">Temperament</dt>
-              <dd className="mt-1 text-sm/6 sm:col-span-2 sm:mt-0">
-                {temperament}
-              </dd>
+              <dt className="text-xs font-medium">Temperament</dt>
+              <dd className="text-xs/6 sm:col-span-2">{temperament}</dd>
             </div>
           )}
           {origin && (
             <div className="px-6 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-              <dt className="text-sm font-medium ">Origin</dt>
-              <dd className="mt-1 text-sm/6 sm:col-span-2 sm:mt-0">{origin}</dd>
+              <dt className="text-xs/6 font-medium ">Origin</dt>
+              <dd className="text-xs/6 sm:col-span-2">{origin}</dd>
+            </div>
+          )}
+          {lifeSpan && (
+            <div className="px-6 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+              <dt className="text-xs/6 font-medium ">Life Span</dt>
+              <dd className="text-xs/6 sm:col-span-2">{lifeSpan} years</dd>
             </div>
           )}
         </dl>
